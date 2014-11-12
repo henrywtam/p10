@@ -1,4 +1,6 @@
 get '/players' do
+  @players = Player.all
+  erb :players
 end
 
 get '/players/:id/game' do

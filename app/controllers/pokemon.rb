@@ -14,9 +14,11 @@ get '/signup' do
 end
 
 post '/signup' do
+  Player.new(name: params[:player_name])
+  Rival.new(name: params[:rival_name])
 end
 
-get '/intro' do
-  erb :intro
+get '/pokemon' do
+  @pokemons = Pokemon.all
+  erb :pokemon
 end
-
