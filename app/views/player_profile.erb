@@ -1,0 +1,17 @@
+<p>Your Profile</p>
+<p>Name: <%= @player.name %></p>
+<p>Password: <%= @player.password %></p>
+<p>ID: <%= @player.id %></p>
+<br>
+<p>Your Pokemon</p>
+<% @pokemon.each do |pokemon| %>
+  <p><%= pokemon.name %></p>
+<% end %>
+<p>Your Rival</p>
+<p>Name: <%= @player.rival.name %></p>
+<br>
+<p>Rival Pokemon</p>
+<% @rival_pokemon.each do |pokemon| %>
+  <p><%= pokemon.name %></p>
+<% end %>
+
