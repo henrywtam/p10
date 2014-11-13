@@ -7,6 +7,18 @@ get '/login' do
 end
 
 post '/login' do
+  p params
+  player = Player.find_by(name: params[:player_name])
+  if player.nil?
+    @error = "That user does not exist."
+    erb :login
+  elsif player.password == params[:player_password]
+    session[:player_id] = player.id
+    redirect "/players/#{player.id}"
+  else
+    @error = "You entered the wrong password."
+    erb :login
+  end
 end
 
 get '/signup' do
@@ -14,19 +26,20 @@ get '/signup' do
 end
 
 post '/signup' do
-  p params
   new_player = Player.new(name: params[:player_name], password: params[:password])
   new_rival = Rival.new(name: params[:rival_name])
-  if new_player.save && new_rival.save
+  if (new_player.save && new_rival.save)
     Game.create(player_id: new_player.id, rival_id: new_rival.id)
+    session[:player_id] = player.id
     redirect "/players/#{new_player.id}"
   else
-    redirect '/signup/error'
+    @error = "There was an issue with the signup. Please try again."
+    redirect '/signup'
   end
 end
 
 get '/signup/error' do
-  puts "there was an error"
+  erb :signup_error
 end
 
 get '/pokemon' do

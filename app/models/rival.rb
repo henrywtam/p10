@@ -5,6 +5,9 @@ class Rival < ActiveRecord::Base
   has_one :player, through: :game
   has_and_belongs_to_many :pokemons
 
+  after_save :reroll
+  after_create :reroll
+
   def list_pokemon
     pokemon_id_arr = []
     pokemon_arr = []

@@ -10,16 +10,7 @@ get '/players/:id' do
   erb :player_profile
 end
 
-get '/players/:id/game' do
-end
-
-get '/players/:id/profile' do
-  erb :profile
-end
-
-get '/players/:id/edit' do
-  erb :profile
-end
-
-post '/players/:id/edit' do
+get '/logout' do
+  session[:player_id] = nil
+  redirect '/login'
 end

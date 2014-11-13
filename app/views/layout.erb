@@ -8,6 +8,22 @@
   <title></title>
 </head>
 <body>
+  <% if current_user %>
+  <div>
+    <a href="/players/<%= @player.id %>">Profile</a>
+    <a href="/logout">Sign Out</a>
+    <a href="/players">Players</a>
+    <a href="/pokemon">Pokemon</a>
+  </div>
+
+  <% else %>
+  <div>
+    <a href="/login">Login</a>
+    <a href="/signup">Sign Up</a>
+    <a href="/players">Players</a>
+    <a href="/pokemon">Pokemon</a>
+  </div>
+  <% end %>
   <%= yield %>
 </body>
 </html>

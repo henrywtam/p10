@@ -6,6 +6,9 @@ class Player < ActiveRecord::Base
   has_one :rival, through: :game
   has_and_belongs_to_many :pokemon
 
+  after_save :reroll
+  after_create :reroll
+
   def list_pokemon
     pokemon_id_arr = []
     pokemon_arr = []
@@ -39,5 +42,4 @@ class Player < ActiveRecord::Base
       Our.create(player_id: self.id, pokemon_id: random_id)
     end
   end
-
 end

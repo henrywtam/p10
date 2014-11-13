@@ -6,7 +6,7 @@
 <div>Your Pokemon</div>
 <br>
 <% @pokemon.each do |pokemon| %>
-  <div><%= pokemon.name %></div>
+  <div><a href="/pokemon/<%= pokemon.id %>"><%= pokemon.name %></a></div>
 <% end %>
 <br>
 <div>Rival Name: <%= @player.rival.name %></div>
@@ -14,6 +14,6 @@
 <div>Rival Pokemon</div>
 <br>
 <% @rival_pokemon.each do |pokemon| %>
-  <div><%= pokemon.name %></div>
+  <div><a href="/pokemon/<%= pokemon.id %>"><%= pokemon.name %></a></div>
 <% end %>
 
