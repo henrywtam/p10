@@ -13,3 +13,17 @@
 .form-group {
   width: 400px;
 }
+
+.player-container {
+  margin: 30px;
+  position: relative;
+}
+
+.pokemon-list {
+  margin: 10px;
+}
+
+.signup {
+  margin: 0px 60px;
+  text-align: left;
+}

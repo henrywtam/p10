@@ -1,5 +1,12 @@
-<img src="http://i.imgur.com/AXAzuCB.jpg"/>
+
 <h1>Pokemon List</h1>
-<% @pokemons.each do |pokemon| %>
-  <div id="pokemon_list"><%= pokemon.id %>. <a href="/pokemon/<%= pokemon.id %>"><%= pokemon.name %></a></div>
+<% counter = 0 %>
+<% 37.times do %>
+  <div class="row">
+    <div class="col-sm-3"><%= counter+1 %>. <a href="/pokemon/<%= @pokemons[counter].id %>"><%= @pokemons[counter].name %></a></div>
+    <div class="col-sm-3"><%= counter+1+38 %>. <a href="/pokemon/<%= @pokemons[counter+38].id %>"><%= @pokemons[counter+38].name %></a></div>
+    <div class="col-sm-3"><%= counter+1+38+38 %>. <a href="/pokemon/<%= @pokemons[counter+38+38].id %>"><%= @pokemons[counter+38+38].name %></a></div>
+    <div class="col-sm-3"><%= counter+1+38+38+38 %>. <a href="/pokemon/<%= @pokemons[counter+38+38+38].id %>"><%= @pokemons[counter+38+38+38].name %></a></div>
+    <% counter += 1 %>
+  </div>
 <% end %>
