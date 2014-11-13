@@ -1,0 +1,15 @@
+.image-border {
+  background-color: black;
+  padding: 30px;
+  display: inline-block;
+  border-radius: 25px;
+  margin: 20px 0px;
+}
+
+.home-image {
+  border-radius: 10px;
+}
+
+.form-group {
+  width: 400px;
+}

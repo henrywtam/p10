@@ -1,19 +1,19 @@
-# require 'httparty'
+require 'httparty'
 
-# counter = 1
-# 151.times do
-#   url = "http://pokeapi.co/api/v1/pokemon/#{counter}/"
-#   response = HTTParty.get(url)
-#   Pokemon.create( name:     response["name"],
-#                   pkdx_id:  response["pkdx_id"],
-#                   height:   response["height"],
-#                   weight:   response["weight"],
-#                   attack:   response["attack"],
-#                   defense:  response["defense"],
-#                   speed:    response["speed"],
-#                   hp:       response["hp"])
-#   counter += 1
-# end
+counter = 1
+151.times do
+  url = "http://pokeapi.co/api/v1/pokemon/#{counter}/"
+  response = HTTParty.get(url)
+  Pokemon.create( name:     response["name"],
+                  pkdx_id:  response["pkdx_id"],
+                  height:   response["height"],
+                  weight:   response["weight"],
+                  attack:   response["attack"],
+                  defense:  response["defense"],
+                  speed:    response["speed"],
+                  hp:       response["hp"])
+  counter += 1
+end
 
 Player.create(name: "henry", password: "henry")
 Player.create(name: "youngsun", password: "youngsun")

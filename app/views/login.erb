@@ -1,7 +1,23 @@
-<h2>Please sign in here</h2>
-<p><%= @error if @error%></p>
-<form id="player_name" action="/login" method="post">
-    <input type="text" name="player_name" placeholder="Player name">
-    <input type="text" name="player_password" placeholder="Password">
-    <button type="submit" value="Enter">Submit</button>
-</form>
+<div class="container">
+  <div class = "jumbotron">
+    <center><h1>Please sign in here</h1>
+    <p><%= @error if @error%></p>
+    <p><div class="image-border"><img class="home-image" src="http://media.giphy.com/media/PiiQ5B1XxxiX6/giphy.gif"/></div></p>
+    <form role="form" action="/login" method="post">
+      <div class="form-group">
+        <label for="Player Name">Player Name</label>
+        <input type="text" name = "player_name" class="form-control" placeholder="Player Name">
+      </div>
+      <div class="form-group">
+        <label for="Password">Password</label>
+        <input type="password" name = "player_password" class="form-control" placeholder="Password">
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> This is pretty cool (but does nothing)
+        </label>
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+</div>
