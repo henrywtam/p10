@@ -3,6 +3,7 @@
   <div class = "jumbotron">
     <center><h1>Your Profile</h1>
     <p><div class="image-border"><img class="home-image" src="http://media.giphy.com/media/PiiQ5B1XxxiX6/giphy.gif"/></div></p>
+    <% if session[:player_id] == @player.id %><a href="/reroll" class="btn btn-success player-reroll">Reroll</a><% end %>
     <% if session[:player_id] == @player.id %><a href="/logout" class="btn btn-danger">Log Out</a><% end %>
   </div>
 
