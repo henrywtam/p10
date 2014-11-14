@@ -24,8 +24,11 @@ class Player < ActiveRecord::Base
   end
 
   def reroll
+    puts "111111111111111111111111111111111111"
     release_pokemon
+    puts "222222222222222222222222222222222222"
     get_pokemon
+    puts "rerolled"
   end
 
   def release_pokemon
