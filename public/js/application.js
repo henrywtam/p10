@@ -12,17 +12,40 @@ $(document).ready(function() {
     })
     console.log("after ajax");
     ajax.done(function(data){
-      console.log("in done");
-      console.log(data)
       alert("You got a new batch!");
       replaceYourBatch(data);
     })
     ajax.fail(function(){
-      console.log("in fail");
       alert("fuuuuuuuuu");
     })
   })
+
+  // $(".pokemon-next").on("click", function(e){
+  //   console.log(e);
+  //   var pokemon_id = parseInt(e.target.pathname.match(/\d+/)[0]);
+  //   e.preventDefault();
+  //   var ajax = $.ajax({
+  //     url: e.target.pathname,
+  //     type: "get",
+  //     data: {id: pokemon_id}
+  //   })
+  //   ajax.done(function(data){
+  //     console.log(data);
+  //     replaceYourPokemon(data)
+  //   })
+  // })
 });
+
+// function replaceYourPokemon(obj) {
+//   var $pic_location = $(".pokemon-portrait")
+//   $pic_location.empty()
+//   pic_link = "<img class=\"home-image\" src=\"http://img.pokemondb.net/artwork/"+obj.name.toLowerCase()+".jpg\"/></div></p>"
+//   $pic_location.append(pic_link)
+//   var $prof_location = $(".pokemon-profile")
+//   $prof_location.empty()
+//   prof_link = "<br><h2>Name: "+obj.name+"</h2><h4>Number: "+obj.pkdx_id.toString()+"</h4><h4>Height: "+obj.height.toString()+"</h4><h4>Weight: "+obj.weight.toString()+"</h4><h4>Attack: "+obj.attack.toString()+"</h4><h4>Defense: "+obj.defense.toString()+"</h4><h4>Speed: "+obj.speed.toString()+"</h4><h4>HP: "+obj.hp.toString()+"</h4>"
+//   prof_location.append(prof_link)
+// }
 
 function replaceYourBatch(array) {
   var $location = $(".your-pokemon")

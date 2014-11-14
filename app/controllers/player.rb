@@ -10,11 +10,6 @@ get '/players/:id' do
   erb :player_profile
 end
 
-get '/logout' do
-  session[:player_id] = nil
-  redirect '/login'
-end
-
 get '/players/:id/reroll' do
   player = Player.find(params[:id])
   player.reroll
@@ -24,5 +19,20 @@ get '/players/:id/reroll' do
     new_pokemon.to_json
   else
     redirect '/'
+  end
+end
+
+get '/pokemon' do
+  @pokemons = Pokemon.all
+  erb :pokemon
+end
+
+get '/pokemon/:id' do
+  @pokemon = Pokemon.find(params[:id])
+  if request.xhr?
+    content_type :json
+    @pokemon.to_json
+  else
+    erb :pokemon_profile
   end
 end

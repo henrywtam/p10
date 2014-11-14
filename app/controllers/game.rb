@@ -25,6 +25,12 @@ post '/login' do
   end
 end
 
+
+get '/logout' do
+  session[:player_id] = nil
+  redirect '/login'
+end
+
 get '/signup' do
   erb :signup
 end
@@ -46,12 +52,4 @@ get '/signup/error' do
   erb :signup_error
 end
 
-get '/pokemon' do
-  @pokemons = Pokemon.all
-  erb :pokemon
-end
 
-get '/pokemon/:id' do
-  @pokemon = Pokemon.find(params[:id])
-  erb :pokemon_profile
-end
