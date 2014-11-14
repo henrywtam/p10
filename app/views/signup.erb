@@ -1,28 +1,75 @@
 <div class="container">
   <div class = "jumbotron">
-    <center><h3><%= @error if @error%></h3>
+    <center><h4><%= @error if @error%></h4>
     <h1>Start Game</h1>
-    <h3><div class="image-border"><img class="home-image" src="http://media.giphy.com/media/PiiQ5B1XxxiX6/giphy.gif"/></div></h3>
-    <form class="signup" role="form" action="/signup" method="post">
-        <h3>Oak: Hello there! Welcome to the world of POKEMON! My name is OAK! People call me the POKEMON PROF!</h3>
-        <h3>Oak: This world is inhabited by creatures called POKEMON! For some people, POKEMON are pets. Others use them for fights. Myself...I study POKEMON as a profession.</h3>
-        <h3>Oak: First, what is your name?</h3>
+    <h4><div class="image-border"><img class="home-image" src="http://media.giphy.com/media/PiiQ5B1XxxiX6/giphy.gif"/></div></h4>
+  </div>
+</div>
+
+<form class="signup" role="form" action="/signup" method="post">
+<div class="signup-row row">
+  <div class = "col-md-1"></div>
+  <div class = "col-md-2"><img src="http://static.giantbomb.com/uploads/original/0/4997/428060-oak.jpg" class="img-thumbnail"/></div>
+  <div class = "col-md-8">
+    <h4>Oak: Hello there! Welcome to the world of POKEMON! My name is OAK! People call me the POKEMON PROF!</h4>
+    <h4>Oak: This world is inhabited by creatures called POKEMON! For some people, POKEMON are pets. Others use them for fights. Myself...I study POKEMON as a profession.</h4>
+  </div>
+  <div class = "col-md-1"></div>
+</div>
+<br>
+
+<div class="signup-row row">
+  <div class = "col-md-1"></div>
+  <div class = "col-md-2"><img src="http://static.giantbomb.com/uploads/original/0/4997/428060-oak.jpg" class="img-thumbnail"/></div>
+  <div class = "col-md-8">
+    <h4>Oak: First, what is your name and password?</h4>
+
       <div class="form-group">
         <input type="text" name = "player_name" class="form-control signup" placeholder="Player Name">
       </div>
-      <h3>Oak: And password?</h3>
       <div class="form-group">
         <input type="password" name = "player_password" class="form-control signup" placeholder="Password">
       </div>
-      <h3>Oak: Right! So your name is ________!</h3>
-      <h3>Oak: This is my grandson. He's been your rival since you were a baby.</h3>
-      <h3>Oak: ...Erm, what is his name again?</h3>
-      <div class="form-group">
-        <input type="text" name="rival_name" class="form-control signup" placeholder="Rival name">
-      </div>
-      <h3>Oak: That's right! I remember now! His name is ________!</h3>
-      <h3>Oak: ________! Your very own POKEMON legend is about to unfold! A world of dreams and adventures with POKEMON awaits! Let's go!</h3>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
+
   </div>
+  <div class = "col-md-1"></div>
 </div>
+<br>
+
+<div class="signup-row row">
+  <div class = "col-md-1"></div>
+  <div class = "col-md-2"><img src="http://static.giantbomb.com/uploads/original/0/4997/428060-oak.jpg" class="img-thumbnail"/></div>
+  <div class = "col-md-8">
+    <h4>Oak: Right! So your name is ________!</h4>
+    <h4>Oak: This is my grandson. He's been your rival since you were a baby.</h4>
+  </div>
+  <div class = "col-md-1"></div>
+</div>
+<br>
+<div class="signup-row row">
+  <div class = "col-md-1"></div>
+  <div class = "col-md-2"><img src="http://static.giantbomb.com/uploads/original/0/4997/428060-oak.jpg" class="img-thumbnail"/></div>
+  <div class = "col-md-8">
+    <h4>Oak: ...Erm, what is his name again?</h4>
+    <div class="form-group">
+      <input type="text" name="rival_name" class="form-control signup" placeholder="Rival name">
+    </div>
+  </div>
+  <div class = "col-md-1"></div>
+</div>
+
+<br>
+<div class="signup-row row">
+  <div class = "col-md-1"></div>
+  <div class = "col-md-2"><img src="http://static.giantbomb.com/uploads/original/0/4997/428060-oak.jpg" class="img-thumbnail"/></div>
+  <div class = "col-md-8">
+    <h4>Oak: That's right! I remember now! His name is ________!</h4>
+    <h4>Oak: ________! Your very own POKEMON legend is about to unfold! A world of dreams and adventures with POKEMON awaits! Let's go!</h4>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </div>
+  <div class = "col-md-1"></div>
+</div>
+
+</form>
+
+

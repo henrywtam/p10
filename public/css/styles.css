@@ -24,6 +24,9 @@
 }
 
 .signup {
-  margin: 0px 60px;
   text-align: left;
+}
+
+.signup-row {
+  display: hidden;
 }

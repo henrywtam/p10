@@ -3,30 +3,29 @@
   <div class = "jumbotron">
     <center><h1>Your Profile</h1>
     <p><div class="image-border"><img class="home-image" src="http://media.giphy.com/media/PiiQ5B1XxxiX6/giphy.gif"/></div></p>
-    <h3>ID: <%= @player.id %></h3>
-    <h3>Name: <%= @player.name %></h3>
-    <% if session[:player_id] == @player.id %><h3>Password: <%= @player.password %></h3><% end %>
-    <h3>Rival: <%= @player.rival.name %></h3>
-    <br>
     <% if session[:player_id] == @player.id %><a href="/logout" class="btn btn-danger">Log Out</a><% end %>
   </div>
 
 <div class="row">
-    <div class = "col-sm-2"></div>
-
+    <div class = "col-md-2">
+    </div>
+    <div class = "col-md-4">
+      <h2>ID: <%= @player.id %></h2>
+      <h2>Name: <%= @player.name %></h2>
+      <% if session[:player_id] == @player.id %><h2>Password: <%= @player.password %></h2><% end %>
+      <h2>Rival: <%= @player.rival.name %></h2>
+    </div>
     <div class = "col-md-3">
       <h2>Your Pokemon</h2>
       <% @pokemon.each do |pokemon| %>
         <div><a href="/pokemon/<%= pokemon.id %>"><%= pokemon.name %></a></div>
       <% end %>
     </div>
-    <div class = "col-sm-2"></div>
     <div class = "col-md-3">
       <h2>Rival Pokemon</h2>
       <% @rival_pokemon.each do |pokemon| %>
         <div><a href="/pokemon/<%= pokemon.id %>"><%= pokemon.name %></a></div>
       <% end %>
     </div>
-    <div class = "col-sm-2"></div>
   </div>
 

@@ -2,6 +2,10 @@ get '/' do
   erb :home
 end
 
+get '/home' do
+  redirect '/'
+end
+
 get '/login' do
   erb :login
 end
@@ -30,7 +34,7 @@ post '/signup' do
   new_rival = Rival.new(name: params[:rival_name])
   if (new_player.save && new_rival.save)
     Game.create(player_id: new_player.id, rival_id: new_rival.id)
-    session[:player_id] = player.id
+    session[:player_id] = new_player.id
     redirect "/players/#{new_player.id}"
   else
     @error = "There was an issue with the signup. Please try again."
